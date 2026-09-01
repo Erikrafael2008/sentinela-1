@@ -1,0 +1,136 @@
+
+body{
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #eef3f7, #dce6ed);
+  margin: 0;
+  padding: 20px;
+  background-image: url(chat1.png);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+
+.container{
+  width: 90%;
+  max-width: 900px;
+  margin: auto;
+  background: linear-gradient(145deg, #ffffff, #f5f8fa);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(60, 80, 95, 0.15);
+}
+
+
+h1, h2{
+  color: #34495e;
+  text-align: center;
+}
+
+
+input,
+select,
+textarea,
+button{
+  width: 100%;
+  padding: 12px;
+  margin-top: 12px;
+  border-radius: 10px;
+  border: 2px solid #d5dde3;
+  font-size: 16px;
+  transition: all .3s ease;
+  box-sizing: border-box;
+}
+
+
+input:focus,
+select:focus,
+textarea:focus{
+  outline: none;
+  border-color: #7f9db2;
+  box-shadow: 0 0 8px rgba(127,157,178,.3);
+}
+
+
+textarea{
+  min-height: 120px;
+  resize: vertical;
+}
+
+
+button{
+  background: linear-gradient(135deg, #536b7a, #8298a6);
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: .3s;
+}
+
+
+button:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(70, 90, 105, 0.3);
+}
+
+
+.card{
+  border-left: 6px solid #718897;
+  padding: 18px;
+  margin: 18px 0;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #ffffff, #f1f5f7);
+  box-shadow: 0 4px 12px rgba(70, 85, 95, 0.08);
+  transition: .3s;
+}
+
+
+.card:hover{
+  transform: scale(1.02);
+  box-shadow: 0 8px 18px rgba(70, 85, 95, 0.15);
+}
+
+
+.verde{
+  display: inline-block;
+  background: linear-gradient(135deg, #6f8f82, #8fa99e);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+
+.amarelo{
+  display: inline-block;
+  background: linear-gradient(135deg, #a89b6f, #c0b58b);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+
+.vermelho{
+  display: inline-block;
+  background: linear-gradient(135deg, #a66f6f, #c18b8b);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+
+/* Barra superior */
+.topo{
+  background: linear-gradient(90deg, #4f6573, #8296a3);
+  color: white;
+  padding: 18px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 0 0 15px 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(60, 75, 85, 0.15);
+}
+
