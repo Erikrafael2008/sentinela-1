@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -5,7 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Hospital Auria</title>
+  <title>Cadastro de Paciente - Hospital Auria</title>
 
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -19,41 +20,306 @@
       Hospital Auria
     </h2>
 
-    <input
-      id="usuario"
-      type="text"
-      placeholder="Usuário"
-      autocomplete="username"
-    >
+    <h3>Cadastro do Paciente</h3>
 
-    <input
-      id="senha"
-      type="password"
-      placeholder="Senha"
-      autocomplete="current-password"
-    >
+    <form id="cadastroForm">
 
-    <button onclick="login()">
-      Entrar
-    </button>
+      <!-- DADOS PESSOAIS -->
+
+      <label for="nome">Nome completo</label>
+      <input
+        id="nome"
+        type="text"
+        placeholder="Digite seu nome completo"
+        required
+      >
+
+      <label for="cpf">CPF</label>
+      <input
+        id="cpf"
+        type="text"
+        placeholder="000.000.000-00"
+        maxlength="14"
+        required
+      >
+
+      <label for="dataNascimento">Data de nascimento</label>
+      <input
+        id="dataNascimento"
+        type="date"
+        required
+      >
+
+      <label for="nomeMae">Nome da mãe</label>
+      <input
+        id="nomeMae"
+        type="text"
+        placeholder="Digite o nome completo da mãe"
+        required
+      >
+
+      <label for="sexo">Sexo</label>
+      <select id="sexo" required>
+        <option value="">Selecione</option>
+        <option value="masculino">Masculino</option>
+        <option value="feminino">Feminino</option>
+        <option value="outro">Outro</option>
+        <option value="nao_informado">Prefiro não informar</option>
+      </select>
+
+      <label for="tipoSanguineo">Tipo sanguíneo</label>
+      <select id="tipoSanguineo">
+        <option value="">Selecione</option>
+        <option value="A+">A+</option>
+        <option value="A-">A-</option>
+        <option value="B+">B+</option>
+        <option value="B-">B-</option>
+        <option value="AB+">AB+</option>
+        <option value="AB-">AB-</option>
+        <option value="O+">O+</option>
+        <option value="O-">O-</option>
+        <option value="nao_sei">Não sei</option>
+      </select>
+
+      <!-- CONTATO -->
+
+      <label for="telefone">Telefone / Celular</label>
+      <input
+        id="telefone"
+        type="tel"
+        placeholder="(00) 00000-0000"
+        maxlength="15"
+        required
+      >
+
+      <label for="email">E-mail</label>
+      <input
+        id="email"
+        type="email"
+        placeholder="exemplo@email.com"
+      >
+
+      <!-- ENDEREÇO -->
+
+      <label for="cep">CEP</label>
+      <input
+        id="cep"
+        type="text"
+        placeholder="00000-000"
+        maxlength="9"
+        required
+      >
+
+      <label for="endereco">Endereço</label>
+      <input
+        id="endereco"
+        type="text"
+        placeholder="Rua, avenida..."
+        required
+      >
+
+      <label for="numero">Número</label>
+      <input
+        id="numero"
+        type="text"
+        placeholder="Número da residência"
+        required
+      >
+
+      <label for="complemento">Complemento</label>
+      <input
+        id="complemento"
+        type="text"
+        placeholder="Apartamento, casa, bloco..."
+      >
+
+      <label for="bairro">Bairro</label>
+      <input
+        id="bairro"
+        type="text"
+        placeholder="Digite o bairro"
+        required
+      >
+
+      <label for="cidade">Cidade</label>
+      <input
+        id="cidade"
+        type="text"
+        placeholder="Digite a cidade"
+        required
+      >
+
+      <label for="estado">Estado</label>
+      <select id="estado" required>
+        <option value="">Selecione o estado</option>
+        <option value="AC">Acre</option>
+        <option value="AL">Alagoas</option>
+        <option value="AP">Amapá</option>
+        <option value="AM">Amazonas</option>
+        <option value="BA">Bahia</option>
+        <option value="CE">Ceará</option>
+        <option value="DF">Distrito Federal</option>
+        <option value="ES">Espírito Santo</option>
+        <option value="GO">Goiás</option>
+        <option value="MA">Maranhão</option>
+        <option value="MT">Mato Grosso</option>
+        <option value="MS">Mato Grosso do Sul</option>
+        <option value="MG">Minas Gerais</option>
+        <option value="PA">Pará</option>
+        <option value="PB">Paraíba</option>
+        <option value="PR">Paraná</option>
+        <option value="PE">Pernambuco</option>
+        <option value="PI">Piauí</option>
+        <option value="RJ">Rio de Janeiro</option>
+        <option value="RN">Rio Grande do Norte</option>
+        <option value="RS">Rio Grande do Sul</option>
+        <option value="RO">Rondônia</option>
+        <option value="RR">Roraima</option>
+        <option value="SC">Santa Catarina</option>
+        <option value="SP">São Paulo</option>
+        <option value="SE">Sergipe</option>
+        <option value="TO">Tocantins</option>
+      </select>
+
+      <!-- CONTATO DE EMERGÊNCIA -->
+
+      <h3>Contato de emergência</h3>
+
+      <label for="contatoEmergencia">Nome do contato</label>
+      <input
+        id="contatoEmergencia"
+        type="text"
+        placeholder="Nome completo"
+        required
+      >
+
+      <label for="telefoneEmergencia">Telefone do contato</label>
+      <input
+        id="telefoneEmergencia"
+        type="tel"
+        placeholder="(00) 00000-0000"
+        maxlength="15"
+        required
+      >
+
+      <label for="parentesco">Parentesco</label>
+      <select id="parentesco" required>
+        <option value="">Selecione</option>
+        <option value="mae">Mãe</option>
+        <option value="pai">Pai</option>
+        <option value="irmao">Irmão/Irmã</option>
+        <option value="conjuge">Cônjuge</option>
+        <option value="filho">Filho/Filha</option>
+        <option value="responsavel">Responsável</option>
+        <option value="outro">Outro</option>
+      </select>
+
+      <!-- INFORMAÇÕES DO ATENDIMENTO -->
+
+      <h3>Informações do atendimento</h3>
+
+      <label for="motivo">Motivo da consulta / atendimento</label>
+      <textarea
+        id="motivo"
+        placeholder="Descreva brevemente o motivo do atendimento..."
+        rows="4"
+        required
+      ></textarea>
+
+      <label for="alergias">Possui alguma alergia?</label>
+      <select id="alergias" required>
+        <option value="">Selecione</option>
+        <option value="nao">Não</option>
+        <option value="sim">Sim</option>
+        <option value="nao_sei">Não sei informar</option>
+      </select>
+
+      <label for="alergiasDescricao">Se sim, quais?</label>
+      <input
+        id="alergiasDescricao"
+        type="text"
+        placeholder="Informe as alergias, se houver"
+      >
+
+      <label for="medicamentos">Utiliza medicamentos atualmente?</label>
+      <select id="medicamentos" required>
+        <option value="">Selecione</option>
+        <option value="nao">Não</option>
+        <option value="sim">Sim</option>
+      </select>
+
+      <label for="medicamentosDescricao">Quais medicamentos?</label>
+      <textarea
+        id="medicamentosDescricao"
+        placeholder="Informe os medicamentos utilizados"
+        rows="3"
+      ></textarea>
+
+      <button type="submit">
+        Cadastrar paciente
+      </button>
+
+    </form>
 
   </div>
 
   <script>
 
-    async function login() {
+    const formulario = document.getElementById("cadastroForm");
 
-      const usuario = document.getElementById("usuario").value.trim();
-      const senha = document.getElementById("senha").value;
+    formulario.addEventListener("submit", async function (event) {
 
-      if (!usuario || !senha) {
-        alert("Preencha o usuário e a senha.");
-        return;
-      }
+      event.preventDefault();
+
+      const paciente = {
+
+        nome: document.getElementById("nome").value.trim(),
+        cpf: document.getElementById("cpf").value.trim(),
+        dataNascimento: document.getElementById("dataNascimento").value,
+        nomeMae: document.getElementById("nomeMae").value.trim(),
+        sexo: document.getElementById("sexo").value,
+        tipoSanguineo: document.getElementById("tipoSanguineo").value,
+
+        telefone: document.getElementById("telefone").value.trim(),
+        email: document.getElementById("email").value.trim(),
+
+        cep: document.getElementById("cep").value.trim(),
+        endereco: document.getElementById("endereco").value.trim(),
+        numero: document.getElementById("numero").value.trim(),
+        complemento: document.getElementById("complemento").value.trim(),
+        bairro: document.getElementById("bairro").value.trim(),
+        cidade: document.getElementById("cidade").value.trim(),
+        estado: document.getElementById("estado").value,
+
+        contatoEmergencia:
+          document.getElementById("contatoEmergencia").value.trim(),
+
+        telefoneEmergencia:
+          document.getElementById("telefoneEmergencia").value.trim(),
+
+        parentesco:
+          document.getElementById("parentesco").value,
+
+        motivo:
+          document.getElementById("motivo").value.trim(),
+
+        alergias:
+          document.getElementById("alergias").value,
+
+        alergiasDescricao:
+          document.getElementById("alergiasDescricao").value.trim(),
+
+        medicamentos:
+          document.getElementById("medicamentos").value,
+
+        medicamentosDescricao:
+          document.getElementById("medicamentosDescricao").value.trim()
+
+      };
 
       try {
 
-        const resposta = await fetch("/login", {
+        const resposta = await fetch("/cadastro-paciente", {
 
           method: "POST",
 
@@ -61,40 +327,28 @@
             "Content-Type": "application/json"
           },
 
-          body: JSON.stringify({
-            usuario: usuario,
-            senha: senha
-          })
+          body: JSON.stringify(paciente)
 
         });
 
         const data = await resposta.json();
 
         if (!resposta.ok) {
-          alert(data.erro || "Usuário ou senha inválidos.");
+
+          alert(
+            data.erro || "Não foi possível cadastrar o paciente."
+          );
+
           return;
         }
 
-        if (data.tipo === "triagem") {
-          window.location.href = "triagem.html";
-          return;
-        }
+        alert("Paciente cadastrado com sucesso!");
 
-        if (data.tipo === "medico") {
-          window.location.href = "medico.html";
-          return;
-        }
-
-        if (data.tipo === "atendimento") {
-          window.location.href = "atendimento.html";
-          return;
-        }
-
-        alert("Tipo de usuário não reconhecido.");
+        formulario.reset();
 
       } catch (error) {
 
-        console.error("Erro no login:", error);
+        console.error("Erro no cadastro:", error);
 
         alert(
           "Não foi possível conectar ao servidor."
@@ -102,11 +356,106 @@
 
       }
 
+    });
+
+
+    // MÁSCARA DE CPF
+
+    document.getElementById("cpf").addEventListener("input", function () {
+
+      let valor = this.value.replace(/\D/g, "");
+
+      valor = valor.replace(/(\d{3})(\d)/, "$1.$2");
+      valor = valor.replace(/(\d{3})(\d)/, "$1.$2");
+      valor = valor.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+
+      this.value = valor;
+
+    });
+
+
+    // MÁSCARA DE CEP
+
+    document.getElementById("cep").addEventListener("input", function () {
+
+      let valor = this.value.replace(/\D/g, "");
+
+      valor = valor.replace(/(\d{5})(\d)/, "$1-$2");
+
+      this.value = valor;
+
+    });
+
+
+    // MÁSCARA DE TELEFONE
+
+    function mascaraTelefone(campo) {
+
+      campo.addEventListener("input", function () {
+
+        let valor = this.value.replace(/\D/g, "");
+
+        valor = valor.replace(/^(\d{2})(\d)/g, "($1) $2");
+        valor = valor.replace(/(\d{5})(\d)/, "$1-$2");
+
+        this.value = valor;
+
+      });
+
     }
+
+    mascaraTelefone(document.getElementById("telefone"));
+    mascaraTelefone(document.getElementById("telefoneEmergencia"));
+
+
+    // BUSCAR ENDEREÇO PELO CEP
+
+    document.getElementById("cep").addEventListener("blur", async function () {
+
+      const cep = this.value.replace(/\D/g, "");
+
+      if (cep.length !== 8) {
+        return;
+      }
+
+      try {
+
+        const resposta = await fetch(
+          `https://viacep.com.br/ws/${cep}/json/`
+        );
+
+        const endereco = await resposta.json();
+
+        if (endereco.erro) {
+
+          alert("CEP não encontrado.");
+          return;
+
+        }
+
+        document.getElementById("endereco").value =
+          endereco.logradouro || "";
+
+        document.getElementById("bairro").value =
+          endereco.bairro || "";
+
+        document.getElementById("cidade").value =
+          endereco.localidade || "";
+
+        document.getElementById("estado").value =
+          endereco.uf || "";
+
+      } catch (error) {
+
+        console.error("Erro ao consultar CEP:", error);
+
+      }
+
+    });
 
   </script>
 
 </body>
 
 </html>
-
+```
