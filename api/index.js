@@ -1,4 +1,4 @@
-```js
+
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
@@ -6,14 +6,14 @@ const cors = require("cors");
 
 const app = express();
 
-// CONFIGURAÇÕES
 app.use(express.json());
 app.use(cors());
 
-// SERVIR O FRONTEND
-app.use(express.static(path.join(__dirname, "../frontend")));
+// Frontend
+const FRONTEND_DIR = path.join(__dirname, "../frontend");
+app.use(express.static(FRONTEND_DIR));
 
-// BANCO DE DADOS
+// Banco de dados
 const DB_FILE = path.join(__dirname, "db.json");
 
 function readDB() {
@@ -52,14 +52,15 @@ function writeDB(data) {
   }
 }
 
-// ===============================
+// =========================
 // LOGIN
-// ===============================
+// =========================
 
 app.post("/login", (req, res) => {
   const db = readDB();
 
-  const { usuario, senha } = req.body;
+  const usuario = req.body.usuario;
+  const senha = req.body.senha;
 
   const user = db.usuarios.find(
     u =>
@@ -76,9 +77,9 @@ app.post("/login", (req, res) => {
   res.json(user);
 });
 
-// ===============================
+// =========================
 // ATENDIMENTO
-// ===============================
+// =========================
 
 app.post("/atendimento", (req, res) => {
   const db = readDB();
@@ -99,15 +100,14 @@ app.post("/atendimento", (req, res) => {
   res.json(paciente);
 });
 
-// ===============================
+// =========================
 // TRIAGEM
-// ===============================
+// =========================
 
 app.post("/triagem", (req, res) => {
   const db = readDB();
 
   let risco = req.body.risco;
-
   const temperatura = Number(req.body.temperatura);
 
   if (temperatura >= 39) {
@@ -137,9 +137,9 @@ app.post("/triagem", (req, res) => {
   res.json(triagem);
 });
 
-// ===============================
+// =========================
 // LISTAR TRIAGENS
-// ===============================
+// =========================
 
 app.get("/triagens", (req, res) => {
   const db = readDB();
@@ -147,9 +147,9 @@ app.get("/triagens", (req, res) => {
   res.json(db.triagens);
 });
 
-// ===============================
+// =========================
 // LISTA DE MEDICAÇÕES
-// ===============================
+// =========================
 
 app.get("/lista-medicacoes", (req, res) => {
   res.json([
@@ -166,9 +166,9 @@ app.get("/lista-medicacoes", (req, res) => {
   ]);
 });
 
-// ===============================
-// CONSULTA MÉDICA
-// ===============================
+// =========================
+// CONSULTA
+// =========================
 
 app.post("/consulta", (req, res) => {
   const db = readDB();
@@ -189,9 +189,9 @@ app.post("/consulta", (req, res) => {
   res.json(consulta);
 });
 
-// ===============================
-// LISTAR MEDICAÇÕES / CONSULTAS
-// ===============================
+// =========================
+// MEDICAÇÕES / CONSULTAS
+// =========================
 
 app.get("/medicacoes", (req, res) => {
   const db = readDB();
@@ -199,23 +199,23 @@ app.get("/medicacoes", (req, res) => {
   res.json(db.consultas);
 });
 
-// ===============================
+// =========================
 // ROTA PRINCIPAL
-// ===============================
+// =========================
 
 app.get("/", (req, res) => {
   res.sendFile(
-    path.join(__dirname, "../frontend/index.html")
+    path.join(FRONTEND_DIR, "index.html")
   );
 });
 
-// ===============================
+// =========================
 // INICIAR SERVIDOR
-// ===============================
+// =========================
 
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 });
-```
+
