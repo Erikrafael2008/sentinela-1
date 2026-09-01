@@ -1,36 +1,527 @@
 <!DOCTYPE html>
-<html>
-<head><link rel="stylesheet" href="css/style.css"></head>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastro do Paciente</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
 <body>
-<div class="container">
-<h2>Atendimento</h2>
 
-<input id="nome" placeholder="Nome">
-<input id="cpf" placeholder="CPF">
+    <div class="page">
 
-<select id="tipo">
-  <option>Convenio</option>
-  <option>Particular</option>
-</select>
+        <!-- CABEÇALHO -->
+        <header class="header">
 
-<input type="file" id="foto">
+            <div class="logo">
+                <div class="logo-icon">✚</div>
 
-<button onclick="cadastrar()">Cadastrar</button>
-</div>
+                <div>
+                    <h1>Hospital Bom Cuidado</h1>
+                    <span>Sistema de Atendimento</span>
+                </div>
+            </div>
+
+        </header>
+
+
+        <!-- CONTEÚDO -->
+        <main class="content">
+
+            <div class="title">
+
+                <div>
+                    <h2>Identificação do Paciente</h2>
+                    <p>Preencha os dados abaixo para realizar o cadastro.</p>
+                </div>
+
+                <span class="status">
+                    ● Cadastro
+                </span>
+
+            </div>
+
+
+            <form id="formPaciente">
+
+
+                <!-- DADOS PESSOAIS -->
+                <section class="card">
+
+                    <div class="card-title">
+                        <div class="icon">👤</div>
+
+                        <div>
+                            <h3>Dados pessoais</h3>
+                            <p>Informações básicas do paciente</p>
+                        </div>
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <div class="campo campo-grande">
+
+                            <label for="nome">
+                                Nome completo <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="nome"
+                                placeholder="Digite o nome completo"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="dataNascimento">
+                                Data de nascimento <span>*</span>
+                            </label>
+
+                            <input
+                                type="date"
+                                id="dataNascimento"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="sexo">
+                                Sexo <span>*</span>
+                            </label>
+
+                            <select id="sexo" required>
+
+                                <option value="">
+                                    Selecione
+                                </option>
+
+                                <option value="Feminino">
+                                    Feminino
+                                </option>
+
+                                <option value="Masculino">
+                                    Masculino
+                                </option>
+
+                                <option value="Outro">
+                                    Outro
+                                </option>
+
+                                <option value="Prefiro não informar">
+                                    Prefiro não informar
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="campo campo-grande">
+
+                            <label for="nomeMae">
+                                Nome da mãe <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="nomeMae"
+                                placeholder="Digite o nome completo da mãe"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="estadoCivil">
+                                Estado civil
+                            </label>
+
+                            <select id="estadoCivil">
+
+                                <option value="">
+                                    Selecione
+                                </option>
+
+                                <option value="Solteiro(a)">
+                                    Solteiro(a)
+                                </option>
+
+                                <option value="Casado(a)">
+                                    Casado(a)
+                                </option>
+
+                                <option value="Divorciado(a)">
+                                    Divorciado(a)
+                                </option>
+
+                                <option value="Viúvo(a)">
+                                    Viúvo(a)
+                                </option>
+
+                                <option value="União estável">
+                                    União estável
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- DOCUMENTAÇÃO -->
+                <section class="card">
+
+                    <div class="card-title">
+
+                        <div class="icon">📄</div>
+
+                        <div>
+                            <h3>Documentação</h3>
+                            <p>Documentos de identificação</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <div class="campo">
+
+                            <label for="documento">
+                                CPF / RG <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="documento"
+                                placeholder="Digite o CPF ou RG"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="tipo">
+                                Tipo de atendimento <span>*</span>
+                            </label>
+
+                            <select id="tipo" required>
+
+                                <option value="">
+                                    Selecione
+                                </option>
+
+                                <option value="Convenio">
+                                    Convênio
+                                </option>
+
+                                <option value="Particular">
+                                    Particular
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- ENDEREÇO E CONTATO -->
+                <section class="card">
+
+                    <div class="card-title">
+
+                        <div class="icon">📍</div>
+
+                        <div>
+                            <h3>Endereço e contato</h3>
+                            <p>Informações para contato com o paciente</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <div class="campo campo-completo">
+
+                            <label for="endereco">
+                                Endereço <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="endereco"
+                                placeholder="Rua, número, bairro, cidade e estado"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="telefone">
+                                Telefone <span>*</span>
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="telefone"
+                                placeholder="(00) 00000-0000"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="email">
+                                E-mail
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="exemplo@email.com"
+                            >
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- EMERGÊNCIA -->
+                <section class="card emergencia">
+
+                    <div class="card-title">
+
+                        <div class="icon">🚨</div>
+
+                        <div>
+                            <h3>Contato de emergência</h3>
+                            <p>Pessoa que deve ser contatada em caso de emergência</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <div class="campo campo-completo">
+
+                            <label for="contatoEmergencia">
+                                Nome e telefone do contato
+                                <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="contatoEmergencia"
+                                placeholder="Ex.: Maria Silva - (00) 00000-0000"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- FOTO -->
+                <section class="card">
+
+                    <div class="card-title">
+
+                        <div class="icon">📷</div>
+
+                        <div>
+                            <h3>Foto do paciente</h3>
+                            <p>Adicione uma foto para identificação</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="upload">
+
+                        <input
+                            type="file"
+                            id="foto"
+                            accept="image/*"
+                        >
+
+                        <label for="foto">
+                            <strong>Selecionar foto</strong>
+                            <small>PNG, JPG ou JPEG</small>
+                        </label>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- BOTÕES -->
+                <div class="actions">
+
+                    <button
+                        type="reset"
+                        class="btn-cancelar"
+                    >
+                        Limpar
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="btn-cadastrar"
+                    >
+                        ✓ Cadastrar paciente
+                    </button>
+
+                </div>
+
+
+            </form>
+
+        </main>
+
+
+        <!-- RODAPÉ -->
+        <footer>
+            Hospital Bom Cuidado © 2026
+        </footer>
+
+    </div>
+
 
 <script>
-function cadastrar(){
- fetch("http://localhost:3000/atendimento",{
-  method:"POST",
-  headers:{"Content-Type":"application/json"},
-  body: JSON.stringify({
-    nome: nome.value,
-    cpf: cpf.value,
-    tipo: tipo.value
-  })
- });
- alert("Paciente enviado para triagem");
+
+document
+    .getElementById("formPaciente")
+    .addEventListener("submit", cadastrar);
+
+
+async function cadastrar(event) {
+
+    event.preventDefault();
+
+
+    const paciente = {
+
+        nome:
+            document.getElementById("nome").value,
+
+        documento:
+            document.getElementById("documento").value,
+
+        dataNascimento:
+            document.getElementById("dataNascimento").value,
+
+        sexo:
+            document.getElementById("sexo").value,
+
+        nomeMae:
+            document.getElementById("nomeMae").value,
+
+        estadoCivil:
+            document.getElementById("estadoCivil").value,
+
+        endereco:
+            document.getElementById("endereco").value,
+
+        telefone:
+            document.getElementById("telefone").value,
+
+        email:
+            document.getElementById("email").value,
+
+        contatoEmergencia:
+            document.getElementById("contatoEmergencia").value,
+
+        tipo:
+            document.getElementById("tipo").value
+    };
+
+
+    try {
+
+        const resposta = await fetch(
+            "http://localhost:3000/atendimento",
+            {
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify(paciente)
+            }
+        );
+
+
+        if (!resposta.ok) {
+
+            throw new Error(
+                "Erro ao cadastrar paciente"
+            );
+
+        }
+
+
+        alert(
+            "✓ Paciente cadastrado com sucesso!"
+        );
+
+
+        document
+            .getElementById("formPaciente")
+            .reset();
+
+
+    } catch (erro) {
+
+        console.error(erro);
+
+        alert(
+            "Não foi possível cadastrar o paciente. " +
+            "Verifique se o servidor está funcionando."
+        );
+
+    }
+
 }
+
 </script>
+
 </body>
 </html>
